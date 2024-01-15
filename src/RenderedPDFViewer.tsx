@@ -1,5 +1,5 @@
 import { PDFViewer as PDFViewerRenderer } from '@react-pdf/renderer';
-import { ComponentProps, FC, useDeferredValue } from 'react';
+import { ComponentProps, FC } from 'react';
 import { useRenderPDF } from './useRenderPDF';
 
 export const RenderedPDFViewer: FC<
@@ -7,8 +7,8 @@ export const RenderedPDFViewer: FC<
     text: string;
   }
 > = ({ style, className, text: outerText, innerRef, showToolbar = true, ...props }) => {
-  const text = useDeferredValue(outerText);
-  const { url, loading, error } = useRenderPDF({ text });
+  // const text = useDeferredValue(outerText);
+  const { url, loading, error } = useRenderPDF({ text: outerText });
 
   const src = url ? `${url}#toolbar=${showToolbar ? 1 : 0}` : null;
   if (loading)

@@ -7,7 +7,13 @@ const reactPlugin = react();
 export default defineConfig({
   plugins: [reactPlugin],
   worker: {
-    plugins: [reactPlugin],
+    // plugins: [reactPlugin], // 224mx-todo: is this needed?
     format: 'es',
   },
+  // 224mx-todo: how to configure?
+  // build: {
+  //   rollupOptions: {
+  //     external: '/@react-refresh',
+  //   },
+  // },
 });

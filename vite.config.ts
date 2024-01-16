@@ -7,13 +7,13 @@ const reactPlugin = react();
 export default defineConfig({
   plugins: [reactPlugin],
   worker: {
-    // plugins: [reactPlugin], // 224mx-todo: is this needed?
+    // plugins: [reactPlugin], // 224mx-note: this is not needed, validated by deploying to vercel, cloudflare pages, Render
     format: 'es',
   },
-  // 224mx-todo: how to configure?
+  // 224mx-may-todo: how to configure to ignore react-refresh when building, below setting dees not work
   // build: {
   //   rollupOptions: {
-  //     external: '/@react-refresh',
+  //     external: 'react-refresh',
   //   },
   // },
 });
